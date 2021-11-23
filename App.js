@@ -35,6 +35,7 @@ const App = () => {
   return (
     <SafeAreaView style={backgroundStyle}>
      <Text>gawjgao </Text>
+     <Text>gawjgao </Text>
     </SafeAreaView>
   );
 };
