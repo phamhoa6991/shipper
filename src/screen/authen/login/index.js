@@ -1,9 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { View, Image, Text, StyleSheet, Alert, TextInput, TouchableO, TouchableOpacity, SafeAreaView, Keyboard, } from 'react-native';
-import styles from './style'
-const ic_next_active = require('../assets/img/ic_next_active.png')
-const ic_logo = require('../assets/img/ic_logo.png')
-const ic_next = require('../assets/img/ic_next.png')
+const ic_next_active = require('../../../../assets/img/ic_next_active.png')
+const ic_logo = require('../../../../assets/img/ic_logo.png')
+const ic_next = require('../../../../assets/img/ic_next.png')
 
 
 const Login = ()  => {
@@ -55,7 +54,6 @@ const Login = ()  => {
     
     return (
         <TouchableOpacity activeOpacity={1} style={styles.container} onPress={() => Keyboard.dismiss()}>
-            <SafeAreaView style={{flex : 1}}>
             <View style={{flex : 1,alignSelf : 'center',justifyContent : 'center',alignItems : 'center'}}>
                 <Image source={ic_logo} />
                 </View>
@@ -71,9 +69,33 @@ const Login = ()  => {
                     </TouchableOpacity>
                 </View>
             </View>
-            </SafeAreaView>
         </TouchableOpacity>
     );
 }
 
 export default Login;
+const styles = StyleSheet.create({
+    container: {
+        flex : 1,
+    },
+
+    text: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: '#151516',
+        marginBottom : 16
+    },
+    login: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom : 36,
+        marginTop : 24
+    },
+    imageButtonStyle: {
+        width: 51,
+        height: 51,
+    },
+
+
+})
