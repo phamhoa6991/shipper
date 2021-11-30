@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from "react";
-import { View, Image, Text, StyleSheet, Alert, TextInput, TouchableO, TouchableOpacity, SafeAreaView, Keyboard, } from 'react-native';
+import { View, Image, Text, StyleSheet, Alert, TextInput, TouchableO, TouchableOpacity, SafeAreaView, Keyboard,Modal } from 'react-native';
+import EnterPhone from '../enter-phone'
+import {text} from '../../../themes/text'
 const ic_next_active = require('../../../../assets/img/ic_next_active.png')
 const ic_logo = require('../../../../assets/img/ic_logo.png')
 const ic_next = require('../../../../assets/img/ic_next.png')
@@ -8,7 +10,7 @@ const ic_next = require('../../../../assets/img/ic_next.png')
 const Login = ()  => {
     const [userName,setUserName] = useState("")
     const [password,setPassword] = useState("")
-
+    const [showEnterPhoneScreen,setShowEnterPhoneScreen] = useState(false)
     const _login = () => {
         // console.log("userName ::",userName)
         // console.log("password ::",password)
@@ -60,15 +62,17 @@ const Login = ()  => {
                
             <View style={{marginHorizontal : 24}}>
                 <Text style={styles.text}>ĐĂNG NHẬP</Text>
-                <TextInput onChange={changeUserName} placeholder='Tên đăng nhập' style={{marginBottom : 16,borderBottomWidth : 1,borderColor :"#E8E8E8" }}/>
+                <TextInput onChange={changeUserName} placeholder='Tên đăng nhập'  keyboardType="numeric" style={{marginBottom : 16,borderBottomWidth : 1,borderColor :"#E8E8E8" }}/>
                 <TextInput  onChange={changePass} placeholder='Mật khẩu' style={{marginBottom : 16,borderBottomWidth : 1,borderColor :"#E8E8E8" }}/>
                 <View style={styles.login}>
-                    <Text>Đổi mật khẩu</Text>
+                    <Text style={text.blackBold16} onPress={() => setShowEnterPhoneScreen(true)}>Đổi mật khẩu</Text>
                     <TouchableOpacity activeOpacity={isDisable ===true ? 1 : 0.5} onPress={isDisable ===true ? () => {} : _login}>
                         <Image style={styles.imageButtonStyle} source={isDisable ===true ? ic_next :ic_next_active}/>
                     </TouchableOpacity>
                 </View>
             </View>
+            <EnterPhone isShow = {showEnterPhoneScreen} onBack={() => setShowEnterPhoneScreen(false)}/>
+
         </TouchableOpacity>
     );
 }
