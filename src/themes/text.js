@@ -5,5 +5,10 @@ export const text = {
         fontSize : 16,
         color : color.black,
         fontWeight : 'bold'
+    },
+    blackBold18 : {
+        fontSize : 18,
+        color : color.black,
+        fontWeight : 'bold'
     }
 }
