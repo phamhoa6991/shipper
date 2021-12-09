@@ -1,8 +1,10 @@
 import React, { memo, useState } from 'react'
-import { Modal, Text, View, TextInput, Image, StyleSheet, Linking, ScrollView, Button, KeyboardAvoidingView, Platform, Keyboard } from 'react-native'
+import { Modal, Text, View, TextInput, Image, StyleSheet, TouchableOpacity, Linking, ScrollView, Button, KeyboardAvoidingView, Platform, Keyboard } from 'react-native'
 import Otp from '../otp'
 import { color } from '../../../themes/color'
 import { text } from '../../../themes/text'
+import Header from '../../../components/header'
+// import { TouchableOpacity } from 'react-native-gesture-handler'
 const ic_phone = require('../../../../assets/img/ic_phone2x.png')
 const ic_back = require('../../../../assets/img/ic_back.png')
 const EnterPhone = (props) => {
@@ -30,11 +32,17 @@ const EnterPhone = (props) => {
 
 
                 <View style={{ backgroundColor: color.white, flex: 1, }}>
+                    <Header title="Đổi mật khẩu" onBack={onBack}/>
+                    {/* <View style={styles.header}>
+                        <TouchableOpacity style={{ flex: 1 }} onPress={onBack}>
+                            <Image source={ic_back} />
+                        </TouchableOpacity>
+                        <View style={{flex: 3,alignItems : 'center'}}>
+                        <Text style={[text.blackBold18]}>Đổi mật khẩu</Text>
+                        </View>
+                        <View style={{ flex: 1 }} />
 
-                    <View style={styles.header}>
-                        <Image source={ic_back} onPress={onBack} />
-                        <Text  style={text.blackBold18}>Đổi mật khẩu</Text>
-                    </View>
+                    </View> */}
                     <View style={{ backgroundColor: color.grey, padding: 16 }}>
                         <View style={styles.enterphone}>
                             <Image source={ic_phone} />
@@ -76,8 +84,8 @@ const styles = StyleSheet.create({
         backgroundColor: color.white,
         padding: 16,
     },
-    headerText:{
-        
+    headerText: {
+
     },
     container: {
         flex: 1
