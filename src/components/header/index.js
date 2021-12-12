@@ -30,10 +30,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: color.white,
         padding: 16,
-        borderRadius: 10,
-        shadowColor: 'red',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,},
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+        
+        elevation: 10},
     headerText: {
 
     },
